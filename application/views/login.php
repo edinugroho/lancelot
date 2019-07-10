@@ -1,6 +1,6 @@
 <div class="uk-container">
     <div class="uk-position-center">
-        <?php echo "<div class='uk-alert-warning uk-close' >". validation_errors() ."</div>"; ?>
+        <?php echo "<div class='uk-alert-danger'>". validation_errors() ."</div>"; ?>
         <form method="post" id="formLogin" action="<?php echo base_url('Login/loginAction'); ?>">
             <div class="uk-margin">
                 <div class="uk-inline">
@@ -21,45 +21,32 @@
 <script>
     $(document).ready(function() {
         $('.uk-button').click(function() {
-            // e.preventDefault();
-            // var username = $('#username').val();
-            // var password = $('#password').val();
-            $( "#formLogin" ).validate({
-              rules: {
-                username: {
-                  required: true,
-                  remote: {
-                    url: "loginAction",
-                    type: "post",
-                    data: {
-                      username: function() {
-                        return $( "#username" ).val();
-                      }
-                    }
-                  }
-                }
-              }
-            });
-            // $.ajax({
-            //     url: 'loginAction',
-            //     type: 'POST',
-            //     dataType: 'text',
-            //     data: {
-            //         username: username,
-            //         password: password
-            //     },
-            // })
-            // .done(function() {
-            //     console.log("success");
-            //     console.log(username);
-
-            // })
-            // .fail(function(xhr, status, error) {
-            //     console.log(error);
-            // })
-            // .always(function() {
-            //     console.log("complete");
-            // });    
+            //e.preventDefault();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            $.ajax({
+                url: 'loginAction',
+                beforeSend : function() {
+                    // console.log('loading');
+                    NProgress.start();
+                },
+                complete : function() {
+                    // console.log('complete');
+                    NProgress.done();
+                },
+                type: 'POST',
+                dataType: 'text',
+                data: {
+                    username: username,
+                    password: password
+                },
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function(xhr, status, error) {
+                console.log(error);
+            });   
         });
     });
 </script>
