@@ -29,6 +29,21 @@ class Admin extends CI_Controller {
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/viewDataBarang',$data);
 	}
+	public function getDataBarangById($id)
+	{
+		$data = $this->BarangM->getBarangById($id);
+		json_encode($data);
+	}
+	public function ubahStatusBarangDitolak($id)
+	{
+		$this->BarangM->ubahStatusBarangDitolak($id);
+		redirect('Admin/viewDataBarang');
+	}
+	public function ubahStatusBarangDiterima($id)
+	{
+		$this->BarangM->ubahStatusBarangDiterima($id);
+		redirect('Admin/viewDataBarang');
+	}
 	public function logout()
 	{
 		session_destroy();

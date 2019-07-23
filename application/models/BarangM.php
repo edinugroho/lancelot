@@ -13,7 +13,15 @@ class BarangM extends CI_Model {
 		// return $query;
 		return $this->db->query("SELECT * FROM `barang`")->result();
 	}
-
+	public function getBarangById($id){
+		return $this->db->query("SELECT * FROM `barang` WHERE `id_barang`= $id")->result();	
+	}
+	public function ubahStatusBarangDitolak($id){
+		return $this->db->query("UPDATE `barang` SET `statusBarang` = 'ditolak' WHERE `barang`.`id_barang` = $id");
+	}
+	public function ubahStatusBarangDiterima($id){
+		return $this->db->query("UPDATE `barang` SET `statusBarang` = 'diterima' WHERE `barang`.`id_barang` = $id");
+	}
 }
 
 /* End of file BarangM.php */

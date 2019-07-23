@@ -31,7 +31,11 @@
                         echo "<td>".$b->id_barang."</td>";
                         echo "<td>".$b->namaBarang."</td>";
                         echo "<td>".$b->jenisBarang."</td>";
-                        echo "<td>".$b->statusBarang."</td>";
+                        if ($b->statusBarang=='diterima') {
+                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDitolak/'.$b->id_barang)."' class='uk-button-small uk-link-reset uk-button-default'>".$b->statusBarang."</a></td>";
+                        }else{
+                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDiterima/'.$b->id_barang)."' class='uk-button-small uk-link-reset uk-button-danger'>".$b->statusBarang."</a></td>";
+                        };
                         echo "<td>".$b->bukaHarga."</td>";
                         echo "<td>".$b->kelipatanHarga."</td>";
                         echo "<td>".$b->beliSekarang."</td>";
@@ -44,3 +48,17 @@
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var id_barang = 2;
+        $.ajax({
+            url: '<?php echo base_url("Admin/getDataBarangById"); ?>',
+            type: 'POST',
+            dataType: 'json',
+            data: {id_barang : id_barang},
+            success: function(data){
+                console.log('cok');
+            }
+        });
+    });
+</script>
