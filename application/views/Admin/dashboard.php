@@ -30,7 +30,7 @@
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Total Penyedia Barang</h3>
                             <span class="statistics-number">
-                                6.384€
+                                9
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
@@ -45,7 +45,7 @@
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Total Pelelang</h3>
                             <span class="statistics-number">
-                                6.384€
+                                89
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
@@ -60,7 +60,7 @@
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Pelelangan Berlangsung</h3>
                             <span class="statistics-number">
-                                6.384€
+                                8
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
