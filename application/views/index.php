@@ -6,14 +6,13 @@
                 <div class="uk-navbar-left">
 
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-active"><a href="#">Data Barang</a></li>
                         <li>
-                            <a href="#">Parent</a>
+                            <a href="#">Login</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li class="uk-active"><a href="#">Active</a></li>
-                                    <li><a href="#">Item</a></li>
-                                    <li><a href="#">Item</a></li>
+                                    <li><a href="<?php echo base_url('/LoginPenyediaBarang'); ?>">Penyedia Barang</a></li>
+                                    <li><a href="<?php echo base_url('/LoginPenawar'); ?>">Penawar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -25,24 +24,24 @@
         </div>
         <div class="uk-container">
             <div class="uk-grid-medium uk-child-width-1-3@s" uk-grid="">
-                <?php 
-                $i=0;
-                do { ?>
+                <?php
+                    foreach ($barang as $b) {
+                ?>
                 <div>
                     <div class="uk-card uk-card-default uk-card-hover">
                         <div class="uk-card-media-top">
                             <img src="https://previews.123rf.com/images/kubixdesign/kubixdesign1612/kubixdesign161200010/69145245-initial-dd-logo-design.jpg" alt="">
                         </div>
                         <div class="uk-card-body">
-                            <h3 class="uk-card-title">Media Top</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            <h3 class="uk-card-title"><?php echo $b->namaBarang; ?></h3>
+                            <p><?php echo $b->deskripsi; ?></p>
                         </div>
                         <div class="uk-card-footer">
                             <a href="#" class="uk-button uk-button-text">Read more</a>
                         </div>
                     </div>
                 </div>
-                <?php $i++;} while ($i < 9); ?>
+                <?php } ?>
             </div>
         </div>
     </body>

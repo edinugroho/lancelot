@@ -16,6 +16,7 @@
                     <th>#</th>
                     <th>Nama Barang</th>
                     <th>Jenis Barang</th>
+                    <th>Deskripsi</th>
                     <th>Status Barang</th>
                     <th>Buka Harga</th>
                     <th>Kelipatan Harga</th>
@@ -31,6 +32,7 @@
                         echo "<td>".$b->id_barang."</td>";
                         echo "<td>".$b->namaBarang."</td>";
                         echo "<td>".$b->jenisBarang."</td>";
+                        echo "<td>".$b->deskripsi."</td>";
                         if ($b->statusBarang=='diterima') {
                             echo "<td><a href='".base_url('Admin/ubahStatusBarangDitolak/'.$b->id_barang)."' class='uk-button-small uk-link-reset uk-button-default'>".$b->statusBarang."</a></td>";
                         }else{

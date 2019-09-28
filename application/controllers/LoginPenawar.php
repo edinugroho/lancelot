@@ -1,34 +1,37 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class LoginPenawar extends CI_Controller {
+
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('LoginM');
-		if (isset($_SESSION['username'])) {
-			redirect('Admin');
+		if (isset($_SESSION['role'])=="penawar") {
+			redirect('Penawar');
 		}
 	}
 	public function index()
 	{
-		$data['title'] = 'Login';
-		$this->load->view('header',$data);
-		$this->load->view('login');
+		$data["title"]="Login Penawar";
+		$this->load->view('header', $data);
+		$this->load->view('Penawar/login', $data);	
 	}
-	public function loginAction(){
+	public function loginAction()
+	{
 		$this->form_validation->set_rules('username', 'username', 'trim|required');
 		$this->form_validation->set_rules('password', 'password', 'trim|required');
 		if ($this->form_validation->run() == true) {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-			$data = $this->LoginM->login($username,$password);
+			$data = $this->LoginM->LoginPenawar($username,$password);
 			if ($data >= 0) {
 				$dataSession = [
-					'username' => $data[0]->username
+					'username' => $data[0]->username,
+					'role' => "penawar"
 				];
 				$this->session->set_userdata($dataSession);
-				redirect(base_url('Admin'));
+				redirect(base_url('Penawar'));
 			}
 		} else {
 			// redirect(base_url('Login'));
@@ -38,5 +41,5 @@ class Login extends CI_Controller {
 
 }
 
-/* End of file Login.php */
-/* Location: ./application/controllers/Login.php */
+/* End of file LoginPenawar.php */
+/* Location: ./application/controllers/LoginPenawar.php */

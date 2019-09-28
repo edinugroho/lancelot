@@ -1,0 +1,1 @@
+<a href="<?php echo base_url('Penawar/logout') ?>">Logout</a>
