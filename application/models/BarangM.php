@@ -13,6 +13,9 @@ class BarangM extends CI_Model {
 		// return $query;
 		return $this->db->query("SELECT * FROM `barang`")->result();
 	}
+	public function getBarangDiterima(){
+		return $this->db->query("SELECT * FROM `barang` WHERE `statusBarang`='diterima'")->result();
+	}
 	public function getBarangById($id){
 		return $this->db->query("SELECT * FROM `barang` WHERE `id_barang`= $id")->result();	
 	}

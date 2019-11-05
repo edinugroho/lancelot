@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
 	{
 		$data['title'] = "Daftar Barang";
 		$this->load->view('header',$data);
-		$data['barang']= $this->BarangM->getBarang();
+		$data['barang']= $this->BarangM->getBarangDiterima();
 		$this->load->view('index',$data);
 	}
 	public function tes()

@@ -16,7 +16,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#">Item</a></li>
+                        <!-- <li><a href="#">Item</a></li> -->
                     </ul>
 
                 </div>
@@ -37,7 +37,7 @@
                             <p><?php echo $b->deskripsi; ?></p>
                         </div>
                         <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <a href="<?php echo base_url('/Barang/detailBarang/').$b->id_barang; ?>" class="uk-button uk-button-text">Read more</a>
                         </div>
                     </div>
                 </div>
