@@ -12,7 +12,17 @@ class PenyediaBarang extends CI_Controller {
 	}
 	public function index()
 	{
+		$data["title"] = "Dashboard Penyedia Barang";
+		$this->load->view('header',$data);
+		$this->load->view('PenyediaBarang/header');
 		$this->load->view('PenyediaBarang/dashboard');
+	}
+	public function tambahBarang()
+	{
+		$data["title"] = "Tambah Barang";
+		$this->load->view('header',$data);
+		$this->load->view('PenyediaBarang/header');
+		$this->load->view('PenyediaBarang/tambahBarang');
 	}
 	public function logout()
 	{
