@@ -14,13 +14,13 @@
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Nama Barang</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" type="text">
+                    <input class="uk-input" name="namaBarang" id="form-stacked-text" type="text">
                 </div>
             </div>
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-select">Jenis Barang</label>
                 <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select">
+                    <select name="jenisBarang" class="uk-select" id="form-stacked-select">
                         <option>Pilih Jenis Barang</option>
                         <option value="hp">Hp</option>
                         <option value="laptop">Laptop</option>
@@ -30,27 +30,27 @@
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Deskripsi</label>
                 <div class="uk-form-controls">
-                    <textarea class="uk-textarea"></textarea>
+                    <textarea type="textarea" name="deskripsi" class="uk-textarea"></textarea>
                 </div>
             </div>
             <div class="uk-grid-small" uk-grid>
                 <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-text">Buka Harga</label>
-                    <input class="uk-input" id="form-stacked-text" type="number">
+                    <input class="uk-input" id="form-stacked-text" name="bukaHarga" type="number">
                 </div>
                 <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-text">Kelipatan Harga</label>
-                    <input class="uk-input" id="form-stacked-text" type="number">
+                    <input class="uk-input" id="form-stacked-text" name="kelipatanHarga" type="number">
                 </div>
             </div>
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Waktu pelelangan</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" type="date">
+                    <input class="uk-input" id="form-stacked-text" name="waktuPelelangan" type="date">
                 </div>
             </div>
             <p uk-margin>
-                <button type="submit" class="uk-button uk-button-primary uk-button-small">Tambah Barang</button>
+                <button type="submit" name="sunmit" class="uk-button uk-button-primary uk-button-small">Tambah Barang</button>
                 <button type="reset" class="uk-button uk-button-danger uk-button-small">Reset</button>
             </p>
         </form>
