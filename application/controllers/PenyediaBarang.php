@@ -24,6 +24,10 @@ class PenyediaBarang extends CI_Controller {
 		$this->load->view('PenyediaBarang/header');
 		$this->load->view('PenyediaBarang/tambahBarang');
 	}
+	public function tambahBarangAction()
+	{
+		$this->form_validation->set_rules('namaBarang', 'namaBarang', 'trim|required');
+	}
 	public function logout()
 	{
 		session_destroy();
