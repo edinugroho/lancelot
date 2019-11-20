@@ -25,11 +25,10 @@ class BarangM extends CI_Model {
 	public function ubahStatusBarangDiterima($id){
 		return $this->db->query("UPDATE `barang` SET `statusBarang` = 'diterima' WHERE `barang`.`id_barang` = $id");
 	}
-	public function addBarang($data)
-	{
-		$q = 
-		
-	}
+	// public function addBarang($data)
+	// {
+	// 	$q = 
+	// }
 }
 
 /* End of file BarangM.php */

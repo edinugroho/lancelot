@@ -48,7 +48,7 @@ class PenyediaBarang extends CI_Controller {
 			// $this->BarangM->addBarang($data);
 			print_r($data);
 		} else {
-			# code...
+			echo "string";
 		}
 	}
 	public function logout()
