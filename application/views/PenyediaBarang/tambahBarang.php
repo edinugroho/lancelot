@@ -10,7 +10,8 @@
 </div>
 <div class="uk-section-small">
     <div class="uk-container uk-container-large">
-        <form action="<?php echo base_url('PenyediaBarang/tambahBarangAction'); ?>" method="post">
+        <?php echo "<div class='uk-alert-danger'>". validation_errors() ."</div>"; ?>
+        <form action="<?php echo base_url('PenyediaBarang/tambahBarangAction'); ?>" method="post" enctype="multipart/form-data">
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Nama Barang</label>
                 <div class="uk-form-controls">
@@ -43,10 +44,21 @@
                     <input class="uk-input" id="form-stacked-text" name="kelipatanHarga" type="number">
                 </div>
             </div>
-            <div class="uk-margin">
-                <label class="uk-form-label" for="form-stacked-text">Waktu pelelangan</label>
-                <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" name="waktuPelelangan" type="date">
+            <div class="uk-grid-small" uk-grid>
+                <div class="uk-width-1-2@s">
+                    <label class="uk-form-label" for="form-stacked-text">Waktu pelelangan</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" name="waktuPelelangan" type="date">
+                    </div>
+                </div>
+                <div class="uk-width-1-2@s">
+                    <label class="uk-form-label" for="form-stacked-text">Gambar</label>
+                    <div class="uk-form-controls">
+                        <div uk-form-custom="target: true">
+                            <input type="file" name="gambar">
+                            <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                        </div>
+                    </div>
                 </div>
             </div>
             <p uk-margin>

@@ -27,28 +27,62 @@ class PenyediaBarang extends CI_Controller {
 	}
 	public function tambahBarangAction()
 	{
-		$this->form_validation->set_rules('namaBarang', 'namaBarang', 'trim|required');
-		$this->form_validation->set_rules('jenisBarang', 'jenisBarang', 'trim|required');
-		$this->form_validation->set_rules('deskripsi', 'deskripsi', 'trim|required');
-		$this->form_validation->set_rules('kelipatanHarga', 'kelipatanHarga', 'trim|required');
-		$this->form_validation->set_rules('waktuPelelangan', 'waktuPelelangan', 'trim|required');
+		$this->form_validation->set_rules('namaBarang', 'Nama Barang', 'trim|required');
+		$this->form_validation->set_rules('jenisBarang', 'Jenis Barang', 'trim|required');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required');
+		$this->form_validation->set_rules('kelipatanHarga', 'Kelipatan Harga', 'trim|required');
+		$this->form_validation->set_rules('bukaHarga', 'Buka Harga', 'trim|required');
+		$this->form_validation->set_rules('waktuPelelangan', 'Waktu Pelelangan', 'trim|required');
 		if ($this->form_validation->run() == TRUE) {
 			$namaBarang = $this->input->post('namaBarang');
 			$jenisBarang = $this->input->post('jenisBarang');
 			$deskripsi = $this->input->post('deskripsi');
 			$kelipatanHarga = $this->input->post('kelipatanHarga');
+			$bukaHarga = $this->input->post('bukaHarga');
 			$waktuPelelangan = $this->input->post('waktuPelelangan');
-			$data = [
-				'namaBarang' => $namaBarang,
-				'jenisBarang' => $jenisBarang,
-				'deskripsi' => $deskripsi,
-				'kelipatanHarga' => $kelipatanHarga,
-				'waktuPelelangan' => $waktuPelelangan
-			];
-			// $this->BarangM->addBarang($data);
-			print_r($data);
+			//upload
+			$config['upload_path'] = './uploads/';
+			$config['allowed_types'] = 'jpg|png';
+			$config['overwrite'] = TRUE;
+			// $config['max_size']  = '100000';
+			// $config['max_width']  = '1024';
+			// $config['max_height']  = '768';
+			$config['file_name'] = '/'.$_SESSION['username'].$namaBarang;
+			
+			$this->load->library('upload', $config);
+			$gambar = $this->upload->data('file_name');
+			if ( ! $this->upload->do_upload('gambar')){
+				$error = array('error' => $this->upload->display_errors());
+				$data['title'] = "gambar error";
+				$this->load->view('header',$data);
+				$this->load->view('PenyediaBarang/header');
+				$this->load->view('PenyediaBarang/tambahBarang');
+			}
+			else{
+				$data = array('upload_data' => $this->upload->data());
+				$data = [
+					'namaBarang' => $namaBarang,
+					'jenisBarang' => $jenisBarang,
+					'deskripsi' => $deskripsi,
+					'kelipatanHarga' => $kelipatanHarga,
+					'bukaHarga' => $bukaHarga,
+					'gambar' => $gambar,
+					'waktuPelelangan' => $waktuPelelangan
+				];
+				$this->BarangM->addBarang($data);
+				$data['title'] = "Sukses tambah barang";
+				$this->load->view('header',$data);
+				$this->load->view('PenyediaBarang/header');
+				$this->load->view('PenyediaBarang/tambahBarang');
+				// $this->load->view('tambahBarang', $data);
+			}
 		} else {
-			echo "string";
+			// $this->index();
+			// $this->load->view('tambahBarang');
+			$data['title'] = "error tambah barang";
+			$this->load->view('header',$data);
+			$this->load->view('PenyediaBarang/header');
+			$this->load->view('PenyediaBarang/tambahBarang');
 		}
 	}
 	public function logout()
