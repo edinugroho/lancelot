@@ -10,10 +10,14 @@ class PenyediaBarang extends CI_Controller {
 			redirect('LoginPenyediaBarang');
 		}
 		$this->load->model('BarangM');
+		$this->load->model('PenyediaBarangM');
 	}
 	public function index()
 	{
 		$data["title"] = "Dashboard Penyedia Barang";
+		$idUser = $this->PenyediaBarangM->getIdPenyediaBarang($_SESSION['username'])[0];
+		$data['jumlahBarang'] = $this->BarangM->getJumlahBarang($idUser->id_penyedia);
+		$data['jumlahBarangDiterima'] = $this->BarangM->getJumlahBarangDiterima($idUser->id_penyedia);
 		$this->load->view('header',$data);
 		$this->load->view('PenyediaBarang/header');
 		$this->load->view('PenyediaBarang/dashboard');
@@ -47,10 +51,14 @@ class PenyediaBarang extends CI_Controller {
 			// $config['max_size']  = '100000';
 			// $config['max_width']  = '1024';
 			// $config['max_height']  = '768';
+			$config['maintain_ratio'] = TRUE;
+			$config['width']  = '380';
+			$config['height']  = '380';
 			$config['file_name'] = '/'.$_SESSION['username'].$namaBarang;
 			
 			$this->load->library('upload', $config);
-			$gambar = $this->upload->data('file_name');
+			
+			// $gambar = $config['file_name'];
 			if ( ! $this->upload->do_upload('gambar')){
 				$error = array('error' => $this->upload->display_errors());
 				$data['title'] = "gambar error";
@@ -59,6 +67,9 @@ class PenyediaBarang extends CI_Controller {
 				$this->load->view('PenyediaBarang/tambahBarang');
 			}
 			else{
+				$idUser = $this->PenyediaBarangM->getIdPenyediaBarang($_SESSION['username'])[0];
+				$gambar = $this->upload->data('file_name');
+				// $ektensi = $this->upload->data('file_ext');
 				$data = array('upload_data' => $this->upload->data());
 				$data = [
 					'namaBarang' => $namaBarang,
@@ -67,10 +78,13 @@ class PenyediaBarang extends CI_Controller {
 					'kelipatanHarga' => $kelipatanHarga,
 					'bukaHarga' => $bukaHarga,
 					'gambar' => $gambar,
+					'id_penyedia' => $idUser->id_penyedia,
 					'waktuPelelangan' => $waktuPelelangan
 				];
 				$this->BarangM->addBarang($data);
 				$data['title'] = "Sukses tambah barang";
+				// echo "<pre>";
+				// print_r($data);
 				$this->load->view('header',$data);
 				$this->load->view('PenyediaBarang/header');
 				$this->load->view('PenyediaBarang/tambahBarang');

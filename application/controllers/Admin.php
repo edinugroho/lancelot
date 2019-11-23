@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Admin Dashboard';
-		$data['jumlahBarang'] = $this->BarangM->getJumlahBarang();
+		$data['jumlahBarang'] = $this->BarangM->getAllJumlahBarang();
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/dashboard');
@@ -43,6 +43,12 @@ class Admin extends CI_Controller {
 	{
 		$this->BarangM->ubahStatusBarangDiterima($id);
 		redirect('Admin/viewDataBarang');
+	}
+	public function detailBarangbyId($id)
+	{
+		$data['barang'] = $this->BarangM->getBarangById($id);
+		echo "<pre>";
+		print_r($data['barang']);
 	}
 	public function logout()
 	{

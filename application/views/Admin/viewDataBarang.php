@@ -20,7 +20,6 @@
                     <th>Status Barang</th>
                     <th>Buka Harga</th>
                     <th>Kelipatan Harga</th>
-                    <th>Beli Sekarang</th>
                     <th>Harga Sekarang</th>
                     <th>Waktu Pelelangan</th>
                 </tr>
@@ -34,15 +33,18 @@
                         echo "<td>".$b->jenisBarang."</td>";
                         echo "<td>".$b->deskripsi."</td>";
                         if ($b->statusBarang=='diterima') {
-                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDitolak/'.$b->id_barang)."' class='uk-button-small uk-link-reset uk-button-default'>".$b->statusBarang."</a></td>";
+                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDitolak/'.$b->id_barang)."' class='uk-button uk-link-reset uk-button-primary'>".$b->statusBarang."</a></td>";
+                        }else if($b->statusBarang=='ditolak'){
+                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDiterima/'.$b->id_barang)."' class='uk-button uk-link-reset uk-button-danger'>".$b->statusBarang."</a></td>";
                         }else{
-                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDiterima/'.$b->id_barang)."' class='uk-button-small uk-link-reset uk-button-danger'>".$b->statusBarang."</a></td>";
+                            echo "<td><a href='".base_url('Admin/ubahStatusBarangDiterima/'.$b->id_barang)."' class='uk-button uk-link-reset uk-button-default'>".$b->statusBarang."</a></td>";
                         };
                         echo "<td>".$b->bukaHarga."</td>";
                         echo "<td>".$b->kelipatanHarga."</td>";
-                        echo "<td>".$b->beliSekarang."</td>";
                         echo "<td>".$b->hargaSekarang."</td>";
                         echo "<td>".$b->waktuPelelangan."</td>";
+                        // echo "<td><button href='".base_url('Admin/detailBarangbyId/').$b->id_barang." class='uk-button uk-button-text'>Detail</button></td>";
+                        echo "<td><a href='".base_url('Admin/detailBarangbyId/').$b->id_barang."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
                     }
                 ?>
                 </tr>

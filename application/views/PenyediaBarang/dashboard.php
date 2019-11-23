@@ -15,7 +15,7 @@
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Total Barang</h3>
                             <span class="statistics-number">
-                            	9
+                            	<?php echo $jumlahBarang; ?>
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
@@ -28,9 +28,9 @@
                 <div>
                     <div class="uk-card-small uk-card-default uk-box-shadow-hover-small">
                         <div class="uk-card-body">
-                            <h3 class="uk-card-title">Total Penyedia Barang</h3>
+                            <h3 class="uk-card-title">Total Barang Diterima</h3>
                             <span class="statistics-number">
-                                9
+                                <?php echo $jumlahBarangDiterima; ?>
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>

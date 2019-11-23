@@ -30,7 +30,7 @@
                 <div>
                     <div class="uk-card uk-card-default uk-card-hover">
                         <div class="uk-card-media-top">
-                            <img src="https://previews.123rf.com/images/kubixdesign/kubixdesign1612/kubixdesign161200010/69145245-initial-dd-logo-design.jpg" alt="">
+                            <img src="/uploads/<?php echo $b->gambar; ?>" alt="<?php echo $b->gambar; ?>" height="380" width="380" >
                         </div>
                         <div class="uk-card-body">
                             <h3 class="uk-card-title"><?php echo $b->namaBarang; ?></h3>

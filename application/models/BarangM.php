@@ -3,9 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class BarangM extends CI_Model {
 
-	public function getJumlahBarang(){
-		// return $this->db->query("SELECT id_barang FROM `barang`")->count_all_results();
-		return $this->db->count_all('barang');
+	public function getAllJumlahBarang()
+	{
+		return $this->db->query("SELECT * FROM `barang`")->num_rows();
+	}
+	public function getJumlahBarang($idUser){
+		// return $this->db->query("SELECT * FROM `barang` WHERE `id_penyedia`=1")->result();
+		$this->db->select('*');
+		$this->db->from('barang');
+		$this->db->where('id_penyedia', $idUser);
+		return $this->db->count_all_results();
+	}
+	public function getJumlahBarangDiterima($idUser){
+		$this->db->select('*');
+		$this->db->from('barang');
+		$this->db->where('id_penyedia', $idUser);
+		$this->db->where('statusBarang', 'diterima');
+		return $this->db->count_all_results();
 	}
 	public function getBarang(){
 		// $this->db->select('*');
@@ -27,7 +41,7 @@ class BarangM extends CI_Model {
 	}
 	public function addBarang($data)
 	{
-		$q = $this->db->query("INSERT INTO `barang` (`namaBarang`, `jenisBarang`, `deskripsi`, `statusBarang`, `bukaHarga`, `kelipatanHarga`, `hargaSekarang`, `waktuPelelangan`, `gambar`) VALUES ('".$data['namaBarang']."','".$data['jenisBarang']."','".$data['deskripsi']."','','".$data['bukaHarga']."','".$data['kelipatanHarga']."','0','".$data['waktuPelelangan']."','".$data['gambar']."')");
+		$q = $this->db->query("INSERT INTO `barang` (`namaBarang`, `jenisBarang`, `deskripsi`, `statusBarang`, `bukaHarga`, `kelipatanHarga`, `hargaSekarang`, `waktuPelelangan`, `gambar`,`id_penyedia`) VALUES ('".$data['namaBarang']."','".$data['jenisBarang']."','".$data['deskripsi']."','pending','".$data['bukaHarga']."','".$data['kelipatanHarga']."','0','".$data['waktuPelelangan']."','".$data['gambar']."','".$data['id_penyedia']."')");
 		return $q;
 	}
 }
