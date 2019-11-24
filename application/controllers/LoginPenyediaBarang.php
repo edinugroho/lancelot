@@ -23,8 +23,9 @@ class LoginPenyediaBarang extends CI_Controller {
 		if ($this->form_validation->run() == true) {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-			$data = $this->LoginM->loginPenyedia($username,$password);
-			if ($data >= 0) {
+			$cek = $this->LoginM->cekPenyedia($username, $password);
+			if ($cek > 0) {
+				$data = $this->LoginM->loginPenyedia($username,$password);
 				$dataSession = [
 					'username' => $data[0]->username,
 					'role' => "penyedia"

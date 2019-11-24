@@ -24,8 +24,9 @@ class LoginPenawar extends CI_Controller {
 		if ($this->form_validation->run() == true) {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-			$data = $this->LoginM->LoginPenawar($username,$password);
-			if ($data >= 0) {
+			$cek = $this->LoginM->cekPenawar($username, $password);
+			if ($cek > 0) {
+				$data = $this->LoginM->LoginPenawar($username,$password);
 				$dataSession = [
 					'username' => $data[0]->username,
 					'role' => "penawar"

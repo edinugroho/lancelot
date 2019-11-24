@@ -83,6 +83,7 @@ class PenyediaBarang extends CI_Controller {
 				];
 				$this->BarangM->addBarang($data);
 				$data['title'] = "Sukses tambah barang";
+				$this->session->set_flashdata('dataBerhasil', $data);
 				// echo "<pre>";
 				// print_r($data);
 				$this->load->view('header',$data);

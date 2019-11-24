@@ -11,6 +11,7 @@
 <div class="uk-section-small">
     <div class="uk-container uk-container-large">
         <?php echo "<div class='uk-alert-danger'>". validation_errors() ."</div>"; ?>
+        <p><?php print_r($this->session->flashdata('dataBerhasil')); ?></p> 
         <form action="<?php echo base_url('PenyediaBarang/tambahBarangAction'); ?>" method="post" enctype="multipart/form-data">
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Nama Barang</label>
