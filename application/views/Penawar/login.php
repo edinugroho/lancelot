@@ -3,6 +3,9 @@
         <?php echo "<div class='uk-alert-danger'>". validation_errors() ."</div>"; ?>
         <p><?php print_r($this->session->flashdata('dataInvalid')); ?></p> 
         <div class="uk-card uk-card-small uk-card-default">
+            <div class="uk-card-header">
+                <center>Login Penawar</center>
+            </div>
             <div class="uk-margin uk-card uk-card-default uk-card-body">
                 <form method="post" id="formLogin" action="<?php echo base_url('loginPenawar/loginAction'); ?>">
                     <div class="uk-margin">

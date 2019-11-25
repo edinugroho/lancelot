@@ -51,7 +51,7 @@
                                             <p>
                                                 Sudah Mempunyai Akun?
                                             </p>
-                                            <a href="<?php echo base_url('LoginPelelang'); ?>" class="uk-button uk-button-default">
+                                            <a href="<?php echo base_url('LoginPenawar'); ?>" class="uk-button uk-button-default">
                                                 <span class="ion-android-person"></span>&nbsp; Login
                                             </a>
                                         </center>

@@ -32,8 +32,8 @@ class LoginPenawar extends CI_Controller {
 					'role' => "penawar"
 				];
 				$this->session->set_userdata($dataSession);
-				print_r($dataSession);
-				// redirect(base_url('Penawar'));
+				// print_r($dataSession);
+				redirect(base_url('Penawar'));
 			}else{
 				$this->session->set_flashdata('dataInvalid', "<script>Swal.fire('Error','Username/ Password Tidak Ditemukan','error')</script>");
 				$this->index();

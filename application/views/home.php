@@ -33,7 +33,7 @@
 								<div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
 									<ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
 										<li><a href="<?php echo base_url('Daftar/penyediaBarang'); ?>"><span class="uk-margin-small-right" ></span>Penyedia Barang</a></li>
-										<li><a href="<?php echo base_url('Daftar/penawar'); ?>"><span class="uk-margin-small-right" ></span>Pelelang</a></li>
+										<li><a href="<?php echo base_url('Daftar/penawar'); ?>"><span class="uk-margin-small-right" ></span>Penawar</a></li>
 										<!-- <li class="uk-nav-divider"></li>
 										<li><a href="#"><span class="uk-margin-small-right" ></span> Item</a></li>-->
 									</ul>
@@ -44,7 +44,7 @@
 								<div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
 									<ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
 										<li><a href="<?php echo base_url('/LoginPenyediaBarang'); ?>"><span class="uk-margin-small-right" ></span>Penyedia Barang</a></li>
-										<li><a href="<?php echo base_url('/LoginPenawar'); ?>"><span class="uk-margin-small-right" ></span>Pelelang</a></li>
+										<li><a href="<?php echo base_url('/LoginPenawar'); ?>"><span class="uk-margin-small-right" ></span>Penawar</a></li>
 										<!-- <li class="uk-nav-divider"></li>
 										<li><a href="#"><span class="uk-margin-small-right" ></span> Item</a></li>-->
 									</ul>
