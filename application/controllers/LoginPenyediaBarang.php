@@ -32,6 +32,9 @@ class LoginPenyediaBarang extends CI_Controller {
 				];
 				$this->session->set_userdata($dataSession);
 				redirect(base_url('PenyediaBarang'));
+			}else{
+				$this->session->set_flashdata('dataInvalid', "<script>Swal.fire('Error','Username/ Password Tidak Ditemukan','error')</script>");
+				$this->index();
 			}
 		} else {
 			// redirect(base_url('Login'));

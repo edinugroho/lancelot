@@ -3,11 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Cards - UIkit 3 KickOff</title>
+		<title><?php echo $title; ?></title>
 		<link rel="icon" href="img/favicon.ico">
 		<!-- CSS FILES -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css">
-		<link rel="stylesheet" type="text/css" href="css/cards.css">
 	</head>
 	<body data-uk-filter="target: .js-filter">
 		
@@ -30,15 +28,25 @@
 					<div class="uk-width-auto">
 						<ul class="uk-subnav" data-uk-margin>
 							<li class="uk-visible@s"><a href="#">Home</a></li>
-							<li class="uk-visible@s"><a href="#">About Us</a></li>
 							<li class="uk-visible@s">
-								<a href="#" data-uk-icon="icon:more"></a>
+								<a>Daftar</a>
 								<div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
 									<ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
-										<li><a href="#"><span class="uk-margin-small-right" data-uk-icon="icon: table"></span> Item</a></li>
-										<li><a href="#"><span class="uk-margin-small-right" data-uk-icon="icon: thumbnails"></span> Item</a></li>
-										<li class="uk-nav-divider"></li>
-										<li><a href="#"><span class="uk-margin-small-right" data-uk-icon="icon: trash"></span> Item</a></li>
+										<li><a href="<?php echo base_url('Daftar/penyediaBarang'); ?>"><span class="uk-margin-small-right" ></span>Penyedia Barang</a></li>
+										<li><a href="<?php echo base_url('Daftar/penawar'); ?>"><span class="uk-margin-small-right" ></span>Pelelang</a></li>
+										<!-- <li class="uk-nav-divider"></li>
+										<li><a href="#"><span class="uk-margin-small-right" ></span> Item</a></li>-->
+									</ul>
+								</div>
+							</li>
+							<li class="uk-visible@s">
+								<a>Login</a>
+								<div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
+									<ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
+										<li><a href="<?php echo base_url('/LoginPenyediaBarang'); ?>"><span class="uk-margin-small-right" ></span>Penyedia Barang</a></li>
+										<li><a href="<?php echo base_url('/LoginPenawar'); ?>"><span class="uk-margin-small-right" ></span>Pelelang</a></li>
+										<!-- <li class="uk-nav-divider"></li>
+										<li><a href="#"><span class="uk-margin-small-right" ></span> Item</a></li>-->
 									</ul>
 								</div>
 							</li>
@@ -114,7 +122,7 @@
 		<!--FOOTER-->
 		<footer id="site-foot" class="uk-section uk-section-secondary uk-section-xsmall">
 			<div class="uk-container uk-text-small uk-text-center">
-				<a href="https://github.com/zzseba78/Kick-Off">Created by KickOff</a> | Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a>
+				<a href="https://github.com/zzseba78/Kick-Off"> Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a>
 			</div>
 		</footer>
 		<!--/FOOTER-->

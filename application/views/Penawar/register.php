@@ -9,14 +9,14 @@
                     <div class="uk-width-1-1@s uk-width-3-5@l uk-width-1-3@xl">
                         <div class="uk-card uk-card-default">
                             <div class="uk-card-header">
-                                Daftar Penyedia Barang
+                                Daftar Penawar
                             </div>
                             <?php 
                                 echo "<p>". $this->session->flashdata('akunBerhasilDibuat') ."</p>";    
                             ?>
                             <div class="uk-card-body">
                                 <?php echo "<div class='uk-alert-danger'>". $this->session->flashdata('usernameInvalid') ."</div>"; ?>
-                                <form method="POST" action="<?php echo base_url("Daftar/daftarPenyediaBarang"); ?>">
+                                <form method="POST" action="<?php echo base_url("Daftar/daftarPenawar"); ?>">
                                     <fieldset class="uk-fieldset">
                                         <div class="uk-margin">
                                             <div class="uk-position-relative">
@@ -51,7 +51,7 @@
                                             <p>
                                                 Sudah Mempunyai Akun?
                                             </p>
-                                            <a href="<?php echo base_url('LoginPenyediaBarang'); ?>" class="uk-button uk-button-default">
+                                            <a href="<?php echo base_url('LoginPelelang'); ?>" class="uk-button uk-button-default">
                                                 <span class="ion-android-person"></span>&nbsp; Login
                                             </a>
                                         </center>
