@@ -44,6 +44,14 @@ class BarangM extends CI_Model {
 		$q = $this->db->query("INSERT INTO `barang` (`namaBarang`, `jenisBarang`, `deskripsi`, `statusBarang`, `bukaHarga`, `kelipatanHarga`, `hargaSekarang`, `waktuPelelangan`, `gambar`,`id_penyedia`) VALUES ('".$data['namaBarang']."','".$data['jenisBarang']."','".$data['deskripsi']."','pending','".$data['bukaHarga']."','".$data['kelipatanHarga']."','0','".$data['waktuPelelangan']."','".$data['gambar']."','".$data['id_penyedia']."')");
 		return $q;
 	}
+	public function getBid($id)
+	{
+		return $this->db->query("SELECT `kelipatanHarga`, `hargaSekarang` FROM `barang` WHERE `id_barang`='$id';")->row() ;
+	}
+	public function tambahBid($data)
+	{
+		return $this->db->query("UPDATE `barang` SET `hargaSekarang` = '".$data['kelipatan']."' WHERE `id_barang` = '".$data['id']."';");	
+	}
 }
 /* End of file BarangM.php */
 /* Location: ./application/models/BarangM.php */

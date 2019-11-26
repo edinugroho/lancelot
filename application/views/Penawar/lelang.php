@@ -29,8 +29,8 @@
 				        <div class="uk-grid-small uk-flex-middle" uk-grid>
 				            <div class="uk-width-expand">
 				                <div class="uk-align-left" >
-						    		<a href="<?php echo base_url(); ?>">
-		                                <span uk-icon="icon: home"></span> Kembali Ke Halaman Utama
+						    		<a href="<?php echo base_url('Pelelang'); ?>">
+		                                <span uk-icon="icon: home"></span> Kembali Ke Dashboard
 		                            </a>
 						    	</div>
 				            </div>
@@ -60,8 +60,11 @@
 				    </div>
 				    <div class="uk-card-footer">
 				    	<div class="uk-align-left" >
-				    		<a class="uk-button uk-button-primary" href="<?php echo base_url('LoginPenawar/'); ?>">Login</a> 
-				    		<div class="uk-text-small"> Silahkan login untuk mengikuti lelang</div>
+				    		<a class="uk-button uk-button-danger" href="<?php echo base_url('Penawar'); ?>">kembali</a>
+				    	</div>
+
+				    	<div class="uk-align-right" >
+				    		<a class="uk-button uk-button-primary" href="<?php echo base_url('Penawar/tambahBid/').$b->id_barang; ?>">Tambah bid</a>
 				    	</div>
 				    </div>
 				</div>

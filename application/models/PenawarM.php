@@ -5,7 +5,7 @@ class PenawarM extends CI_Model {
 
 	public function getIdPenawar($username)
 	{
-		return $this->db->query("SELECT `id_penawar`, FROM `penawar` WHERE `username`='$username'")->result();
+		return $this->db->query("SELECT `id_penawar` FROM `penawar` WHERE `username`='$username'")->result();
 	}
 	public function cekUsername($username)
 	{
@@ -14,7 +14,7 @@ class PenawarM extends CI_Model {
 	public function addPenawar($data)
 	{
 		return $this->db->query("INSERT INTO `penawar`(`username`,`email`, `password`) VALUES ('".$data['username']."','".$data['email']."','".$data['password']."')");
-	}	
+	}
 
 }
 

@@ -9,6 +9,9 @@ class Penawar extends CI_Controller {
 		if ($_SESSION['role']!='penawar') {
 			redirect('LoginPenawar');
 		}
+		$this->load->model('BarangM');
+		$this->load->model('PenawarM');
+		$this->load->model('TawarM');
 	}
 	public function index()
 	{
@@ -16,9 +19,47 @@ class Penawar extends CI_Controller {
 		// $idUser = $this->PenyediaBarangM->getIdPenyediaBarang($_SESSION['username'])[0];
 		// $data['jumlahBarang'] = $this->BarangM->getJumlahBarang($idUser->id_penyedia);
 		// $data['jumlahBarangDiterima'] = $this->BarangM->getJumlahBarangDiterima($idUser->id_penyedia);
+		$data['barang']= $this->BarangM->getBarangDiterima();
 		$this->load->view('header',$data);
 		$this->load->view('Penawar/header');
-		$this->load->view('Penawar/dashboard');
+		$this->load->view('Penawar/dashboard', $data);
+	}	
+	public function lelang($id)
+	{
+		$data["title"] = "Lelang";
+		$data["barang"] = $this->BarangM->getBarangById($id);
+		$this->load->view('header', $data);
+		$this->load->view('Penawar/header');
+		$this->load->view('Penawar/lelang',$data);
+	}
+	public function tambahBid($id)
+	{
+		$bid = $this->BarangM->getBid($id);
+		$kelipatan = $bid->hargaSekarang+$bid->kelipatanHarga;
+		$data = [
+			'id' => $id,
+			'kelipatan' => $kelipatan
+		];
+		//update pengebid
+		//get id penawar
+		$idPenawar = $this->PenawarM->getIdPenawar($_SESSION['username'])[0];
+		$dataId = [
+			'penawar' => $idPenawar->id_penawar,
+			'barang' => $id
+		];
+		$qUpdate = $this->TawarM->addTawar($dataId);
+		$q = $this->BarangM->tambahBid($data);
+		if ($q && $qUpdate) {
+			echo "ok";
+		}else{
+			echo "err";
+		}
+	}
+	public function lastBid($idBarang)
+	{
+		$lb = $this->TawarM->getLastBid($idBarang);
+		echo "<pre>";
+		print_r($lb);
 	}
 	public function logout()
 	{

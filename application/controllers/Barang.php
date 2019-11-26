@@ -15,6 +15,8 @@ class Barang extends CI_Controller {
 	public function detailBarang($id){
 		$data["title"] = 'Detail Barang';
 		$data["barang"] = $this->BarangM->getBarangById($id);
+		$this->load->view('nav');
+		$this->load->view('header', $data);
 		$this->load->view('detailBarang', $data);
 	}
 

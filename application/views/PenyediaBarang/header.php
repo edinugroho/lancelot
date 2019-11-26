@@ -129,10 +129,6 @@
                         <a href="#"><?php echo $_SESSION['username']; ?> &nbsp;<span class="ion-ios-arrow-down"></span></a>
                         <div uk-dropdown="pos: bottom-right; mode: click; offset: -17;">
                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                               <li class="uk-nav-header">Options</li>
-                               <li><a href="#">Edit Profile</a></li>
-                               <li class="uk-nav-header">Actions</li>
-                               <li><a href="#">Lock</a></li>
                                <li><a href="<?php echo base_url('PenyediaBarang/logout'); ?>">logout</a></li>
                            </ul>
                         </div>
