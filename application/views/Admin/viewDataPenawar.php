@@ -1,6 +1,6 @@
 <div class="uk-section-small uk-section-default header">
     <div class="uk-container uk-container-large">
-        <h1><span class="ion-speedometer"></span> Lihat Data Penyedia Barang</h1>
+        <h1><span class="ion-speedometer"></span> Lihat Data Penawar</h1>
         <!-- <p>
             Welcome back, <?php echo $_SESSION['username']; ?>
         </p> -->
@@ -20,13 +20,13 @@
             </thead>
             <tbody>
                 <?php
-                    foreach ($penyediaBarang as $b) {
+                    foreach ($penawar as $b) {
                         echo "<tr>";
-                        echo "<td>".$b->id_penyedia."</td>";
+                        echo "<td>".$b->id_penawar."</td>";
                         echo "<td>".$b->username."</td>";
                         echo "<td>".$b->email."</td>";
                         echo "<td></td>";
-                        echo "<td><a href='".base_url('Admin/detailPenyediaBarang/').$b->id_penyedia."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
+                        echo "<td><a href='".base_url('Admin/detailPenawar/').$b->id_penawar."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
                         echo "</tr>";
                     }
                 ?>

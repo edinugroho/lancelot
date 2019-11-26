@@ -11,6 +11,7 @@ class Admin extends CI_Controller {
 		}
 		$this->load->model('BarangM');
 		$this->load->model('PenyediaBarangM');
+		$this->load->model('PenawarM');
 	}
 
 	public function index()
@@ -18,6 +19,8 @@ class Admin extends CI_Controller {
 		$data['title'] = 'Admin Dashboard';
 		$data['jumlahBarang'] = $this->BarangM->getAllJumlahBarang();
 		$data['jumlahPenyediaBarang'] = $this->PenyediaBarangM->getAllJumlahPenyediaBarang();
+		$data['jumlahPenawar'] = $this->PenawarM->getAllJumlahPenawar();
+		$data['jumlahPelelangan'] = 1;
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/dashboard');
@@ -39,6 +42,31 @@ class Admin extends CI_Controller {
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/viewDataPenyediaBarang',$data);
 	}
+	public function viewDataPenawar()
+	{
+		$data['title'] = 'Lihat Data Penawar';
+		$data['penawar'] = $this->PenawarM->getPenawar();
+		$this->load->view('header',$data);
+		$this->load->view('Admin/header',$data);
+		$this->load->view('Admin/viewDataPenawar',$data);
+	}
+	public function viewDataPenlelangan()
+	{
+		$data['title'] = 'Lihat Data Pelelangan';
+		$this->load->view('header',$data);
+	}
+	public function detailPenyediaBarang($id)
+	{
+		$data['penyediaBarang'] = $this->PenyediaBarangM->getPenyediaBarangById($id);
+		echo "<pre>";
+		print_r($data['penyediaBarang']);
+	}
+	public function detailPenawar($id)
+	{
+		$data['penawar'] = $this->PenawarM->getPenawarById($id);
+		echo "<pre>";
+		print_r($data['penawar']);
+	}
 	public function getDataBarangById($id)
 	{
 		$data = $this->BarangM->getBarangById($id);
@@ -54,7 +82,7 @@ class Admin extends CI_Controller {
 		$this->BarangM->ubahStatusBarangDiterima($id);
 		redirect('Admin/viewDataBarang');
 	}
-	public function detailBarangbyId($id)
+	public function detailBarang($id)
 	{
 		$data['barang'] = $this->BarangM->getBarangById($id);
 		echo "<pre>";

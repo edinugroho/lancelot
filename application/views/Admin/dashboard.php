@@ -43,30 +43,30 @@
                 <div>
                     <div class="uk-card-small uk-card-default uk-box-shadow-hover-small">
                         <div class="uk-card-body">
-                            <h3 class="uk-card-title">Total Pelelang</h3>
+                            <h3 class="uk-card-title">Total Penawar</h3>
                             <span class="statistics-number">
-                                89
+                                <?php echo $jumlahPenawar; ?>
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
                         </div>
                         <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <a href="<?php echo base_url('Admin/viewDataPenawar'); ?>" class="uk-button uk-button-text">Lihat Data</a>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-card-small uk-card-default uk-box-shadow-hover-small">
                         <div class="uk-card-body">
-                            <h3 class="uk-card-title">Pelelangan Berlangsung</h3>
+                            <h3 class="uk-card-title">Pelelangan</h3>
                             <span class="statistics-number">
-                                8
+                                <?php echo $jumlahPelelangan; ?>
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
                         </div>
                         <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <a href="<?php echo base_url('Admin/viewDataPenlelangan'); ?>" class="uk-button uk-button-text">Lihat Data</a>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class PenyediaBarangM extends CI_Model {
+	public function getPenyediaBarangById($id){
+		return $this->db->query("SELECT * FROM `penyedia_barang` WHERE `id_penyedia`= $id")->result();	
+	}
 	public function getAllJumlahPenyediaBarang()
 	{
 		return $this->db->query("SELECT * FROM `penyedia_barang`")->num_rows();
