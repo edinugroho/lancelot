@@ -34,7 +34,6 @@ class Admin extends CI_Controller {
 	public function viewDataPenyedia()
 	{
 		$data['title'] = 'Lihat Data Penyedia Barang';
-		// $data['jumlahBarang'] = $this->BarangM->getJumlahBarang();data barang
 		$data['penyediaBarang'] = $this->PenyediaBarangM->getPenyediaBarang();
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);

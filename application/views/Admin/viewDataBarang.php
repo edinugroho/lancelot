@@ -45,6 +45,7 @@
                         echo "<td>".$b->waktuPelelangan."</td>";
                         // echo "<td><button href='".base_url('Admin/detailBarangbyId/').$b->id_barang." class='uk-button uk-button-text'>Detail</button></td>";
                         echo "<td><a href='".base_url('Admin/detailBarangbyId/').$b->id_barang."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
+                        echo "</tr>";
                     }
                 ?>
                 </tr>
