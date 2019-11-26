@@ -2,6 +2,9 @@
 		<div class="spacer"></div>
 		<!--Konten-->
 		<div class="uk-container">
+			<?php 
+                echo "<p>". $this->session->flashdata('bidSuccess') ."</p>";    
+            ?>
 			<?php foreach ($barang as $b) { ?>
 				<!-- <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: <?php echo  $b->waktuPelelangan; ?>T14:47:22+00:00">
 				    <div>

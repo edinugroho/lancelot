@@ -50,7 +50,12 @@ class Penawar extends CI_Controller {
 		$qUpdate = $this->TawarM->addTawar($dataId);
 		$q = $this->BarangM->tambahBid($data);
 		if ($q && $qUpdate) {
-			echo "ok";
+			$this->session->set_flashdata('bidSuccess', "<script>Swal.fire('Bid Berhasil','Anda Telah memasukan bid sesuai kelipatan','success')</script>");
+			$data["title"] = "Bid Sukses";
+			$data["barang"] = $this->BarangM->getBarangById($id);
+			$this->load->view('header', $data);
+			$this->load->view('Penawar/header');
+			$this->load->view('Penawar/lelang',$data);
 		}else{
 			echo "err";
 		}

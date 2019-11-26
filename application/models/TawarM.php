@@ -9,8 +9,9 @@ class TawarM extends CI_Model {
 	}	
 	public function getLastBid($idBarang)
 	{
-		$row = $this->db->select("*")->limit(1)->order_by('id_tawar',"DESC")->get('ditawar')->row();
-		return $row;
+		// $row = $this->db->select("*")->limit(1)->order_by('id_tawar',"DESC")->get('ditawar')->row();
+		$q = $this->db->query("SELECT `id_penawar` FROM `ditawar` WHERE `id_barang`='$idBarang' ORDER BY `ditawar`.`id_tawar` ASC")->last_row();
+		return $q;
 	}
 }
 
