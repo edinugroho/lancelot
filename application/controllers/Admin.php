@@ -10,12 +10,14 @@ class Admin extends CI_Controller {
 			redirect('Login');
 		}
 		$this->load->model('BarangM');
+		$this->load->model('PenyediaBarangM');
 	}
 
 	public function index()
 	{
 		$data['title'] = 'Admin Dashboard';
 		$data['jumlahBarang'] = $this->BarangM->getAllJumlahBarang();
+		$data['jumlahPenyediaBarang'] = $this->PenyediaBarangM->getAllJumlahPenyediaBarang();
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/dashboard');
@@ -28,6 +30,15 @@ class Admin extends CI_Controller {
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/viewDataBarang',$data);
+	}
+	public function viewDataPenyedia()
+	{
+		$data['title'] = 'Lihat Data Penyedia Barang';
+		// $data['jumlahBarang'] = $this->BarangM->getJumlahBarang();data barang
+		$data['penyediaBarang'] = $this->PenyediaBarangM->getPenyediaBarang();
+		$this->load->view('header',$data);
+		$this->load->view('Admin/header',$data);
+		$this->load->view('Admin/viewDataPenyediaBarang',$data);
 	}
 	public function getDataBarangById($id)
 	{

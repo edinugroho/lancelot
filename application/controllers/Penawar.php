@@ -40,8 +40,6 @@ class Penawar extends CI_Controller {
 			'id' => $id,
 			'kelipatan' => $kelipatan
 		];
-		//update pengebid
-		//get id penawar
 		$idPenawar = $this->PenawarM->getIdPenawar($_SESSION['username'])[0];
 		$dataId = [
 			'penawar' => $idPenawar->id_penawar,
@@ -57,7 +55,7 @@ class Penawar extends CI_Controller {
 			$this->load->view('Penawar/header');
 			$this->load->view('Penawar/lelang',$data);
 		}else{
-			echo "err";
+			echo "error";
 		}
 	}
 	public function lastBid($idBarang)

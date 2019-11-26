@@ -30,13 +30,13 @@
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Total Penyedia Barang</h3>
                             <span class="statistics-number">
-                                9
+                                <?php echo $jumlahPenyediaBarang; ?>
                                 <span class="uk-label uk-label-success">
                                 </span>
                             </span>
                         </div>
                         <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <a href="<?php echo base_url('Admin/viewDataPenyedia'); ?>" class="uk-button uk-button-text">Lihat Data</a>
                         </div>
                     </div>
                 </div>
