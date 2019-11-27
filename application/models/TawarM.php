@@ -13,6 +13,10 @@ class TawarM extends CI_Model {
 		$q = $this->db->query("SELECT `id_penawar` FROM `ditawar` WHERE `id_barang`='$idBarang' ORDER BY `ditawar`.`id_tawar` ASC")->last_row();
 		return $q;
 	}
+	public function getAllLastBid()
+	{
+		return $this->db->query("SELECT * FROM `ditawar`")->result();
+	}
 }
 
 /* End of file TawarM.php */

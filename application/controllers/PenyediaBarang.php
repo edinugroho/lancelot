@@ -100,6 +100,15 @@ class PenyediaBarang extends CI_Controller {
 			$this->load->view('PenyediaBarang/tambahBarang');
 		}
 	}
+	public function lihatBarangDiterima()
+	{
+		$data['title'] = "Data Barang Diterima";
+
+		$data['barang']=$this->BarangM->getBarangDiterima();
+		$this->load->view('header',$data);
+		$this->load->view('PenyediaBarang/header');
+		$this->load->view('PenyediaBarang/viewDataBarang', $data);
+	}
 	public function logout()
 	{
 		session_destroy();

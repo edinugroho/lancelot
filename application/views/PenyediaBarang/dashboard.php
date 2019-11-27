@@ -36,7 +36,7 @@
                             </span>
                         </div>
                         <div class="uk-card-footer">
-                            <a href="#" class="uk-button uk-button-text">Read more</a>
+                            <a href="<?php echo base_url('PenyediaBarang/lihatBarangDiterima'); ?>" class="uk-button uk-button-text">Lihat Data</a>
                         </div>
                     </div>
                 </div>

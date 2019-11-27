@@ -26,7 +26,7 @@
 					</div>
 					<div class="uk-card-body">
 						<h6 class="uk-margin-small-bottom uk-margin-remove-adjacent uk-text-bold"><?php echo $b->namaBarang; ?></h6>
-						<p class="uk-text-small uk-text-muted"><?php echo $b->deskripsi; ?></p>
+						<p class="uk-text-small uk-text-muted"><?php echo word_limiter($b->deskripsi,10); ?></p>
 					</div>
 					<div class="uk-card-footer">
 						<div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle" data-uk-grid>

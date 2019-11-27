@@ -12,6 +12,7 @@ class Admin extends CI_Controller {
 		$this->load->model('BarangM');
 		$this->load->model('PenyediaBarangM');
 		$this->load->model('PenawarM');
+		$this->load->model('TawarM');
 	}
 
 	public function index()
@@ -21,6 +22,8 @@ class Admin extends CI_Controller {
 		$data['jumlahPenyediaBarang'] = $this->PenyediaBarangM->getAllJumlahPenyediaBarang();
 		$data['jumlahPenawar'] = $this->PenawarM->getAllJumlahPenawar();
 		$data['jumlahPelelangan'] = 1;
+		$data['lelang'] = $this->TawarM->getAllLastBid();
+		// date('Y-m-d');
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/dashboard');

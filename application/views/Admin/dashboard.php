@@ -71,24 +71,40 @@
                     </div>
                 </div>
             </div>
-            <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@s">
+            <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-1@s">
                 <div>
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-header">
-                            Website Traffic
+                            Pelelangan Berlangsung
                         </div>
                         <div class="uk-card-body">
-                            <canvas id="chart1"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-header">
-                            Website Traffic
-                        </div>
-                        <div class="uk-card-body">
-                            <canvas id="chart2"></canvas>
+                            <table class="uk-table uk-table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama Barang</th>
+                                        <th>Jenis Barang</th>
+                                        <th>Deskripsi</th>
+                                        <th>Status Barang</th>
+                                        <th>Buka Harga</th>
+                                        <th>Kelipatan Harga</th>
+                                        <th>Harga Sekarang</th>
+                                        <th>Waktu Pelelangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        foreach ($lelang as $b) {
+                                            echo "<tr>";
+                                            echo "<td>".$b->id_tawar."</td>";
+                                            echo "<td>".$b->id_barang."</td>";
+                                            echo "<td>".$b->id_penawar."</td>";
+                                            echo "</tr>";
+                                        }
+                                    ?>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

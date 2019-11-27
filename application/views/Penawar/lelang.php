@@ -32,7 +32,7 @@
 				        <div class="uk-grid-small uk-flex-middle" uk-grid>
 				            <div class="uk-width-expand">
 				                <div class="uk-align-left" >
-						    		<a href="<?php echo base_url('Pelelang'); ?>">
+						    		<a href="<?php echo base_url('Penawar'); ?>">
 		                                <span uk-icon="icon: home"></span> Kembali Ke Dashboard
 		                            </a>
 						    	</div>
