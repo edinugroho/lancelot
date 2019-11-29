@@ -83,13 +83,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama Barang</th>
-                                        <th>Jenis Barang</th>
-                                        <th>Deskripsi</th>
-                                        <th>Status Barang</th>
-                                        <th>Buka Harga</th>
-                                        <th>Kelipatan Harga</th>
-                                        <th>Harga Sekarang</th>
-                                        <th>Waktu Pelelangan</th>
+                                        <th>Penawar</th>                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -97,8 +91,12 @@
                                         foreach ($lelang as $b) {
                                             echo "<tr>";
                                             echo "<td>".$b->id_tawar."</td>";
-                                            echo "<td>".$b->id_barang."</td>";
-                                            echo "<td>".$b->id_penawar."</td>";
+                                            foreach ($bidBarang as $bidB) {
+                                                echo "<td>".$bidB->namaBarang."</td>";
+                                            }
+                                            foreach ($bidPenawar as $bidP) {
+                                                echo "<td>".$bidP->username."</td>";
+                                            }                                            
                                             echo "</tr>";
                                         }
                                     ?>

@@ -24,6 +24,12 @@ class Admin extends CI_Controller {
 		$data['jumlahPelelangan'] = 1;
 		$data['lelang'] = $this->TawarM->getAllLastBid();
 		// date('Y-m-d');
+		foreach ($data['lelang'] as $j) {
+			$id_barang = $j->id_barang;	
+			$id_penawar = $j->id_penawar;
+		}
+		$data['bidBarang'] = $this->BarangM->getBarangById($id_barang);
+		$data['bidPenawar'] = $this->PenawarM->getPenawarById($id_penawar);
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/dashboard');
