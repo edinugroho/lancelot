@@ -17,7 +17,7 @@
                     <div class="uk-margin">
                         <div class="uk-inline">
                             <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                            <input class="uk-input" type="text" id="password" name="password">
+                            <input class="uk-input" type="password" id="password" name="password">
                         </div>
                     </div>
                     <button class="uk-button uk-align-center uk-button-primary uk-button-small">Login</button>

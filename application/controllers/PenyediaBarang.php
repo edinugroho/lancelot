@@ -123,11 +123,23 @@ class PenyediaBarang extends CI_Controller {
 	}
 	public function detailPemenang($id)
 	{
+		$data['title'] = "Detail Pemenang Lelang";
 		$data['cariPemenang']= $this->TawarM->detailPemenang($id);
 		$idPenawar = $data['cariPemenang']->id_penawar;
 		$data['pemenang'] = $this->PenawarM->getPenawarById($idPenawar);
-		echo "<pre>";
-		print_r($data['pemenang']);
+		$this->load->view('header', $data);
+		$this->load->view('PenyediaBarang/header');
+		$this->load->view('PenyediaBarang/viewDataPemenang', $data);
+	}
+	public function bidTerahir($id)
+	{
+		$data['title'] = "Detail penawar bid terakhir";
+		$data['cariPemenang']= $this->TawarM->detailPemenang($id);
+		$idPenawar = $data['cariPemenang']->id_penawar;
+		$data['pemenang'] = $this->PenawarM->getPenawarById($idPenawar);
+		$this->load->view('header', $data);
+		$this->load->view('PenyediaBarang/header');
+		$this->load->view('PenyediaBarang/viewDataPemenang', $data);
 	}
 	public function logout()
 	{

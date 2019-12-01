@@ -50,7 +50,7 @@
 		<!--FOOTER-->
 		<footer id="site-foot" class="uk-section uk-section-secondary uk-section-xsmall">
 			<div class="uk-container uk-text-small uk-text-center">
-				<a href="https://github.com/zzseba78/Kick-Off"> Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a>
+				<a href="#">Lancelot 2019</a>
 			</div>
 		</footer>
 		<!--/FOOTER-->
