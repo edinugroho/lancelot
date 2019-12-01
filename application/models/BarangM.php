@@ -30,6 +30,9 @@ class BarangM extends CI_Model {
 	public function getBarangDiterima(){
 		return $this->db->query("SELECT * FROM `barang` WHERE `statusBarang`='diterima'")->result();
 	}
+	public function getBarangDiterimaByPenyedia($id){
+		return $this->db->query("SELECT * FROM `barang` WHERE `statusBarang`='diterima' AND `id_penyedia`='$id'")->result();
+	}
 	public function getBarangById($id){
 		return $this->db->query("SELECT * FROM `barang` WHERE `id_barang`= $id")->result();	
 	}
@@ -46,12 +49,21 @@ class BarangM extends CI_Model {
 	}
 	public function getBid($id)
 	{
-		return $this->db->query("SELECT `kelipatanHarga`, `hargaSekarang` FROM `barang` WHERE `id_barang`='$id';")->row() ;
+		return $this->db->query("SELECT * FROM `barang` WHERE `id_barang`='$id';")->row() ;
 	}
 	public function tambahBid($data)
 	{
 		return $this->db->query("UPDATE `barang` SET `hargaSekarang` = '".$data['kelipatan']."' WHERE `id_barang` = '".$data['id']."';");	
 	}
+	public function getJumlahBarangByTanggal($tanggal,$id)
+	{
+		return $this->db->query("SELECT * FROM `barang` WHERE `waktuPelelangan`<='$tanggal' AND `id_penyedia`=$id")->num_rows();
+	}
+	public function getBarangByTanggal($tanggal,$id)
+	{
+		return $this->db->query("SELECT * FROM `barang` WHERE `waktuPelelangan`<='$tanggal' AND `id_penyedia`=$id")->result();
+	}
+	
 }
 /* End of file BarangM.php */
 /* Location: ./application/models/BarangM.php */

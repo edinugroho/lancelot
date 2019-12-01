@@ -17,6 +17,14 @@ class TawarM extends CI_Model {
 	{
 		return $this->db->query("SELECT * FROM `ditawar`")->result();
 	}
+	public function detailPemenang($id)
+	{
+		return $this->db->query("SELECT * FROM `ditawar` WHERE `id_barang`='$id'")->last_row();
+	}
+	public function getTawar()
+	{
+		return $this->db->query("SELECT * FROM `ditawar` ORDER BY `id_tawar`")->result();
+	}
 }
 
 /* End of file TawarM.php */

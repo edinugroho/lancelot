@@ -62,7 +62,10 @@ class Admin extends CI_Controller {
 	public function viewDataPenlelangan()
 	{
 		$data['title'] = 'Lihat Data Pelelangan';
+		$data['pelelangan'] = $this->TawarM->getTawar();
 		$this->load->view('header',$data);
+		$this->load->view('Admin/header',$data);
+		$this->load->view('Admin/viewDataPelelangan', $data);
 	}
 	public function detailPenyediaBarang($id)
 	{

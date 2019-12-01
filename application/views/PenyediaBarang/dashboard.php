@@ -9,7 +9,7 @@
     </div>
     <div class="uk-section-small">
         <div class="uk-container uk-container-large">
-            <div class="uk-grid-medium uk-child-width-1-2@s" uk-grid="">
+            <div class="uk-grid-medium uk-child-width-1-3@s" uk-grid="">
                 <div>
                     <div class="uk-card-small uk-card-default uk-box-shadow-hover-small">
                         <div class="uk-card-body">
@@ -39,7 +39,22 @@
                             <a href="<?php echo base_url('PenyediaBarang/lihatBarangDiterima'); ?>" class="uk-button uk-button-text">Lihat Data</a>
                         </div>
                     </div>
-            </div>
+                </div>
+                <div>
+                    <div class="uk-card-small uk-card-default uk-box-shadow-hover-small">
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title">Total Barang selesai lelang</h3>
+                            <span class="statistics-number">
+                                <?php echo $barangSelesai; ?>
+                                <span class="uk-label uk-label-success">
+                                </span>
+                            </span>
+                        </div>
+                        <div class="uk-card-footer">
+                            <a href="<?php echo base_url('PenyediaBarang/selesaiLelang'); ?>" class="uk-button uk-button-text">Lihat Data</a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>

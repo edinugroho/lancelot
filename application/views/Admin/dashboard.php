@@ -71,42 +71,6 @@
                     </div>
                 </div>
             </div>
-            <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-1@s">
-                <div>
-                    <div class="uk-card uk-card-default">
-                        <div class="uk-card-header">
-                            Pelelangan Berlangsung
-                        </div>
-                        <div class="uk-card-body">
-                            <table class="uk-table uk-table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama Barang</th>
-                                        <th>Penawar</th>                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                        foreach ($lelang as $b) {
-                                            echo "<tr>";
-                                            echo "<td>".$b->id_tawar."</td>";
-                                            foreach ($bidBarang as $bidB) {
-                                                echo "<td>".$bidB->namaBarang."</td>";
-                                            }
-                                            foreach ($bidPenawar as $bidP) {
-                                                echo "<td>".$bidP->username."</td>";
-                                            }                                            
-                                            echo "</tr>";
-                                        }
-                                    ?>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

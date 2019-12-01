@@ -11,6 +11,8 @@ class PenyediaBarang extends CI_Controller {
 		}
 		$this->load->model('BarangM');
 		$this->load->model('PenyediaBarangM');
+		$this->load->model('TawarM');
+		$this->load->model('PenawarM');
 	}
 	public function index()
 	{
@@ -18,6 +20,7 @@ class PenyediaBarang extends CI_Controller {
 		$idUser = $this->PenyediaBarangM->getIdPenyediaBarang($_SESSION['username'])[0];
 		$data['jumlahBarang'] = $this->BarangM->getJumlahBarang($idUser->id_penyedia);
 		$data['jumlahBarangDiterima'] = $this->BarangM->getJumlahBarangDiterima($idUser->id_penyedia);
+		$data['barangSelesai'] = $this->BarangM->getJumlahBarangByTanggal(date('Y-m-d'),$idUser->id_penyedia);
 		$this->load->view('header',$data);
 		$this->load->view('PenyediaBarang/header');
 		$this->load->view('PenyediaBarang/dashboard');
@@ -103,11 +106,28 @@ class PenyediaBarang extends CI_Controller {
 	public function lihatBarangDiterima()
 	{
 		$data['title'] = "Data Barang Diterima";
-
-		$data['barang']=$this->BarangM->getBarangDiterima();
+		$idUser = $this->PenyediaBarangM->getIdPenyediaBarang($_SESSION['username'])[0];
+		$data['barang']=$this->BarangM->getBarangDiterimaByPenyedia($idUser->id_penyedia);
 		$this->load->view('header',$data);
 		$this->load->view('PenyediaBarang/header');
 		$this->load->view('PenyediaBarang/viewDataBarang', $data);
+	}
+	public function selesaiLelang()
+	{
+		$data['title']= "Data Barang Selesai Lelang";
+		$idUser = $this->PenyediaBarangM->getIdPenyediaBarang($_SESSION['username'])[0];
+		$data['barang'] = $this->BarangM->getBarangByTanggal(date('Y-m-d'),$idUser->id_penyedia);
+		$this->load->view('header',$data);
+		$this->load->view('PenyediaBarang/header');
+		$this->load->view('PenyediaBarang/viewDataSelesaiLelang', $data);
+	}
+	public function detailPemenang($id)
+	{
+		$data['cariPemenang']= $this->TawarM->detailPemenang($id);
+		$idPenawar = $data['cariPemenang']->id_penawar;
+		$data['pemenang'] = $this->PenawarM->getPenawarById($idPenawar);
+		echo "<pre>";
+		print_r($data['pemenang']);
 	}
 	public function logout()
 	{
