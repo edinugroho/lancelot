@@ -27,7 +27,7 @@
                         echo "<td>".$b->namaBarang."</td>";
                         echo "<td>".$b->username."</td>";
                         echo "<td>".$b->hargaSekarang."</td>";
-                        echo "<td><a href='".base_url('Admin/detailPenawar/').$b->id_tawar."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
+                        echo "<td><a href='".base_url('Admin/detailPenawar/').$b->id_penawar."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
                         echo "</tr>";
                     }
                 ?>

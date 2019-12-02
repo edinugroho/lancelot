@@ -28,7 +28,7 @@ class TawarM extends CI_Model {
 	public function getTawarForAdmin()
 	{
 		return $this->db->query("
-			SELECT barang.id_barang, barang.namaBarang, barang.id_penyedia , barang.hargaSekarang , penawar.username , ditawar.id_tawar FROM barang JOIN ditawar ON barang.id_barang = ditawar.id_barang JOIN penawar on penawar.id_penawar = ditawar.id_penawar ORDER BY ditawar.id_tawar"
+			SELECT barang.id_barang, barang.namaBarang, barang.id_penyedia , barang.hargaSekarang , penawar.username , ditawar.id_tawar, ditawar.id_penawar FROM barang JOIN ditawar ON barang.id_barang = ditawar.id_barang JOIN penawar on penawar.id_penawar = ditawar.id_penawar ORDER BY ditawar.id_tawar"
 		)->result();
 	}
 	public function getTawarForAdminNum()

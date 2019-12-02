@@ -44,7 +44,7 @@ class BarangM extends CI_Model {
 	}
 	public function addBarang($data)
 	{
-		$q = $this->db->query("INSERT INTO `barang` (`namaBarang`, `jenisBarang`, `deskripsi`, `statusBarang`, `bukaHarga`, `kelipatanHarga`, `hargaSekarang`, `waktuPelelangan`, `gambar`,`id_penyedia`) VALUES ('".$data['namaBarang']."','".$data['jenisBarang']."','".$data['deskripsi']."','pending','".$data['bukaHarga']."','".$data['kelipatanHarga']."','0','".$data['waktuPelelangan']."','".$data['gambar']."','".$data['id_penyedia']."')");
+		$q = $this->db->query("INSERT INTO `barang` (`namaBarang`, `jenisBarang`, `deskripsi`, `statusBarang`, `bukaHarga`, `kelipatanHarga`, `hargaSekarang`, `waktuPelelangan`, `gambar`,`id_penyedia`) VALUES ('".$data['namaBarang']."','".$data['jenisBarang']."','".$data['deskripsi']."','pending','".$data['bukaHarga']."','".$data['kelipatanHarga']."','".$data['hargaSekarang']."','".$data['waktuPelelangan']."','".$data['gambar']."','".$data['id_penyedia']."')");
 		return $q;
 	}
 	public function getBid($id)

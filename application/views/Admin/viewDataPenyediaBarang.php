@@ -25,8 +25,8 @@
                         echo "<td>".$b->id_penyedia."</td>";
                         echo "<td>".$b->username."</td>";
                         echo "<td>".$b->email."</td>";
-                        echo "<td></td>";
-                        echo "<td><a href='".base_url('Admin/detailPenyediaBarang/').$b->id_penyedia."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
+                        // echo "<td></td>";
+                        // echo "<td><a href='".base_url('Admin/detailPenyediaBarang/').$b->id_penyedia."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
                         echo "</tr>";
                     }
                 ?>

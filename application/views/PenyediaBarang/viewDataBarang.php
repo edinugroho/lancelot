@@ -38,11 +38,6 @@
                         echo "<td>".$b->hargaSekarang."</td>";
                         echo "<td>".$b->waktuPelelangan."</td>";
                         // echo "<td><button href='".base_url('Admin/detailBarangbyId/').$b->id_barang." class='uk-button uk-button-text'>Detail</button></td>";
-                        if ($b->hargaSekarang==0) {
-                            echo "<td></td>";
-                        }else{
-                            echo "<td><a href='".base_url('PenyediaBarang/bidTerahir/').$b->id_barang."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
-                        }
                         echo "</tr>";
                     }
                 ?>

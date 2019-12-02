@@ -82,7 +82,8 @@ class PenyediaBarang extends CI_Controller {
 					'bukaHarga' => $bukaHarga,
 					'gambar' => $gambar,
 					'id_penyedia' => $idUser->id_penyedia,
-					'waktuPelelangan' => $waktuPelelangan
+					'waktuPelelangan' => $waktuPelelangan,
+					'hargaSekarang' => $bukaHarga
 				];
 				$this->BarangM->addBarang($data);
 				$data['title'] = "Sukses tambah barang";
