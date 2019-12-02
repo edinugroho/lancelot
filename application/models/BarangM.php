@@ -28,7 +28,7 @@ class BarangM extends CI_Model {
 		return $this->db->query("SELECT * FROM `barang`")->result();
 	}
 	public function getBarangDiterima(){
-		return $this->db->query("SELECT * FROM `barang` WHERE `statusBarang`='diterima'")->result();
+		return $this->db->query("SELECT * FROM `barang` WHERE `statusBarang`='diterima' AND `waktuPelelangan`>=CURDATE()")->result();
 	}
 	public function getBarangDiterimaByPenyedia($id){
 		return $this->db->query("SELECT * FROM `barang` WHERE `statusBarang`='diterima' AND `id_penyedia`='$id'")->result();

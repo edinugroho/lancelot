@@ -14,8 +14,9 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>id barang</th>
-                    <th>id penawar</th>
+                    <th>nama barang</th>
+                    <th>nama penawar</th>
+                    <th>harga</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,10 +24,10 @@
                     foreach ($pelelangan as $b) {
                         echo "<tr>";
                         echo "<td>".$b->id_tawar."</td>";
-                        echo "<td>".$b->id_barang."</td>";
-                        echo "<td>".$b->id_penawar."</td>";
-                        echo "<td></td>";
-                        echo "<td><a href='".base_url('Admin/detailPenawar/').$b->id_penawar."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
+                        echo "<td>".$b->namaBarang."</td>";
+                        echo "<td>".$b->username."</td>";
+                        echo "<td>".$b->hargaSekarang."</td>";
+                        echo "<td><a href='".base_url('Admin/detailPenawar/').$b->id_tawar."' class='uk-button uk-link-reset uk-button-default'>Detail</a></td>";
                         echo "</tr>";
                     }
                 ?>

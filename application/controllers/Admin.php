@@ -21,9 +21,8 @@ class Admin extends CI_Controller {
 		$data['jumlahBarang'] = $this->BarangM->getAllJumlahBarang();
 		$data['jumlahPenyediaBarang'] = $this->PenyediaBarangM->getAllJumlahPenyediaBarang();
 		$data['jumlahPenawar'] = $this->PenawarM->getAllJumlahPenawar();
-		$data['jumlahPelelangan'] = 1;
+		$data['jumlahPelelangan'] = $this->TawarM->getTawarForAdminNum();
 		$data['lelang'] = $this->TawarM->getAllLastBid();
-		// date('Y-m-d');
 		foreach ($data['lelang'] as $j) {
 			$id_barang = $j->id_barang;	
 			$id_penawar = $j->id_penawar;
@@ -59,10 +58,17 @@ class Admin extends CI_Controller {
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/viewDataPenawar',$data);
 	}
-	public function viewDataPenlelangan()
+	public function viewDataPelelangan()
 	{
 		$data['title'] = 'Lihat Data Pelelangan';
-		$data['pelelangan'] = $this->TawarM->getTawar();
+		$data['pelelangan'] = $this->TawarM->getTawarForAdmin();
+		// foreach ($data['pelelangan'] as $k) {
+		// 	echo "<pre>";
+		// 	$idP = $k->id_penawar;
+		// 	$idB = $k->id_barang;
+		// }
+		// $dataP = $this->PenawarM->getPenawarById($idP);
+		// print_r($dataP);
 		$this->load->view('header',$data);
 		$this->load->view('Admin/header',$data);
 		$this->load->view('Admin/viewDataPelelangan', $data);

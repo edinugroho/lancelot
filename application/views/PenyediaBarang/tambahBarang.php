@@ -49,7 +49,7 @@
                 <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-text">Waktu pelelangan</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" name="waktuPelelangan" type="date">
+                        <input class="uk-input" id="form-stacked-text" id="from" name="waktuPelelangan" type="date" data-uk-datepicker="{format:'DD.MM.YYYY', minDate:'04.06.2015'}">
                     </div>
                 </div>
                 <div class="uk-width-1-2@s">

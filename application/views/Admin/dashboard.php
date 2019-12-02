@@ -58,7 +58,7 @@
                 <div>
                     <div class="uk-card-small uk-card-default uk-box-shadow-hover-small">
                         <div class="uk-card-body">
-                            <h3 class="uk-card-title">Pelelangan</h3>
+                            <h3 class="uk-card-title">Transaksi</h3>
                             <span class="statistics-number">
                                 <?php echo $jumlahPelelangan; ?>
                                 <span class="uk-label uk-label-success">
@@ -66,7 +66,7 @@
                             </span>
                         </div>
                         <div class="uk-card-footer">
-                            <a href="<?php echo base_url('Admin/viewDataPenlelangan'); ?>" class="uk-button uk-button-text">Lihat Data</a>
+                            <a href="<?php echo base_url('Admin/viewDataPelelangan'); ?>" class="uk-button uk-button-text">Lihat Data</a>
                         </div>
                     </div>
                 </div>

@@ -86,7 +86,7 @@ class PenyediaBarang extends CI_Controller {
 				];
 				$this->BarangM->addBarang($data);
 				$data['title'] = "Sukses tambah barang";
-				$this->session->set_flashdata('dataBerhasil', $data);
+				$this->session->set_flashdata('dataBerhasil', "<script>Swal.fire('Berhasil Tambah Barang','Silahkan tunggu konfirmasi dari admin','success')</script>");
 				// echo "<pre>";
 				// print_r($data);
 				$this->load->view('header',$data);
