@@ -103,8 +103,9 @@ class Admin extends CI_Controller {
 	public function detailBarang($id)
 	{
 		$data['barang'] = $this->BarangM->getBarangById($id);
-		echo "<pre>";
-		print_r($data['barang']);
+		$this->load->view('header',$data);
+		$this->load->view('Admin/header',$data);
+		$this->load->view('Admin/detailBarang', $data);
 	}
 	public function logout()
 	{
