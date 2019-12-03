@@ -49,11 +49,11 @@
 						    <dt>Deskripsi</dt>
 						    <dd><?php echo  $b->deskripsi; ?></dd>
 						    <dt>Buka Harga</dt>
-						    <dd><?php echo  $b->bukaHarga; ?></dd>
+						    <dd><?php echo "Rp. ".number_format($b->bukaHarga); ?></dd>
 						    <dt>Kelipatan Harga</dt>
-						    <dd><?php echo  $b->kelipatanHarga; ?></dd>
+						    <dd><?php echo "Rp. ".number_format($b->kelipatanHarga); ?></dd>
 						    <dt>Harga Sekarang</dt>
-						    <dd><?php echo  $b->hargaSekarang; ?></dd>
+						    <dd><?php echo "Rp. ".number_format($b->hargaSekarang); ?></dd>
 						    <dt>Batas Pelelangan</dt>
 						    <dd><?php echo  $b->waktuPelelangan; ?></dd>
 						</dl>
