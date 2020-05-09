@@ -1,10 +1,10 @@
 <body>	
 		<!--HEADER-->
 		<header id="site-head">
-			<div class="uk-container uk-container-expand">
+			<div class="uk-container uk-container-expand" style="background-color: #222">
 				<div class="uk-grid uk-grid-medium uk-flex uk-flex-middle" data-uk-grid>
 					<div class="uk-width-auto">
-						<a href="#" class="uk-logo" title=""><img src="https://pngimage.net/wp-content/uploads/2018/06/logo-l-png-2.png" width="80" height="80" alt=""></a>
+						<a href="#" class="uk-logo" title=""><img src="https://pngimage.net/wp-content/uploads/2018/06/logo-l-png-2.png" width="40" height="40" alt="">ANCELOT</a>
 					</div>
 					<div class="uk-width-expand">
 					</div>
